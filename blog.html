@@ -100,6 +100,35 @@
 
     </section>
 
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="mt-12">
+        <p class="text-center text-sm pb-6 text-gray-500">
+            &copy; <span id="year-range"></span> - All Rights Reserved by Ahsan Habib.
+        </p>
+    </footer>
+
+    <!-- ================= DYNAMIC YEAR SCRIPT ================= -->
+    <script>
+
+        // Step 1: Define the year when the project/site was created
+        const createdYear = 2026;
+
+        // Step 2: Get the current year from the system (auto updates every year)
+        const currentYear = new Date().getFullYear();
+
+        // Step 3: Create a year range string
+        // If project created this year → show single year (e.g., 2026)
+        // Otherwise → show range (e.g., 2026-2027)
+        const yearRange =
+            createdYear === currentYear
+                ? `${createdYear}`
+                : `${createdYear}-${currentYear}`;
+
+        // Step 4: Insert the calculated year into the HTML span
+        document.getElementById("year-range").textContent = yearRange;
+
+    </script>
+
 </body>
 
 </html>
